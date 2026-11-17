@@ -1,33 +1,55 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // =========================================================
+  // 1. INTERATIVIDADE DA PÁGINA "COMO FUNCIONA" (FAQ ACORDEÃO)
+  // =========================================================
+  const faqQuestions = document.querySelectorAll(".faq-question");
+  faqQuestions.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const item = btn.parentElement;
+      const isOpen = item.classList.contains("open");
+
+      document.querySelectorAll(".faq-item").forEach((el) => {
+        el.classList.remove("open");
+        const icon = el.querySelector(".faq-question span");
+        if (icon) icon.textContent = "+";
+      });
+
+      if (!isOpen) {
+        item.classList.add("open");
+        const icon = btn.querySelector("span");
+        if (icon) icon.textContent = "−";
+      }
+    });
+  });
+
+  // =========================================================
+  // 2. SISTEMA CADERNO DE CAMPO (EXECUTA APENAS EM sistema.html)
+  // =========================================================
+  const formObservacao = document.getElementById("form-observacao");
+  const formAplicacao = document.getElementById("form-aplicacao");
+
+  // Se não estiver na página do sistema, encerra aqui sem erros
+  if (!formObservacao || !formAplicacao) {
+    return;
+  }
+
   const STORAGE_OBS = "agrocampo_observacoes_v1";
   const STORAGE_APP = "agrocampo_aplicacoes_v1";
 
-  // Elementos da tela de boas-vindas e navegação
-  const welcomeScreen = document.getElementById("welcome-screen");
-  const appContainer = document.getElementById("app-container");
-  const btnEntrar = document.getElementById("btn-entrar");
-  const btnVoltarInicio = document.getElementById("btn-voltar-inicio");
-
-  // Abas
   const tabButtons = document.querySelectorAll(".tab-btn");
   const tabPanels = document.querySelectorAll(".tab-panel");
 
-  // Formulários e listas
-  const formObservacao = document.getElementById("form-observacao");
   const listaObservacoes = document.getElementById("lista-observacoes");
   const buscaObs = document.getElementById("busca-obs");
   const filtroStatus = document.getElementById("filtro-status");
 
-  const formAplicacao = document.getElementById("form-aplicacao");
   const listaAplicacoes = document.getElementById("lista-aplicacoes");
   const alertaEpi = document.getElementById("app-alerta-epi");
 
-  // Datas padrão de hoje nos formulários
   const hojeISO = new Date().toISOString().split("T")[0];
   document.getElementById("obs-data").value = hojeISO;
   document.getElementById("app-data").value = hojeISO;
 
-  // Dados iniciais de exemplo caso seja o primeiro acesso
   function inicializarDadosPadrao() {
     if (!localStorage.getItem(STORAGE_OBS)) {
       const exemplosObs = [
@@ -216,18 +238,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
 
-  // Navegação Tela de Boas-Vindas <-> Sistema
-  btnEntrar.addEventListener("click", () => {
-    welcomeScreen.classList.add("hidden");
-    appContainer.classList.remove("hidden");
-  });
-
-  btnVoltarInicio.addEventListener("click", () => {
-    appContainer.classList.add("hidden");
-    welcomeScreen.classList.remove("hidden");
-  });
-
-  // Troca de Abas
+  // Troca de Abas no Caderno de Campo
   tabButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       tabButtons.forEach((b) => b.classList.remove("active"));
