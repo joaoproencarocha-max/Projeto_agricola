@@ -3,259 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroCampo — Gestão Rural e Observação de Lavouras</title>
+  <title>AgroCampo — Bem-vindo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- TELA DE BOAS-VINDAS -->
-  <section id="welcome-screen" class="welcome-screen">
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand">
+        <span class="brand-icon">🌱</span>
+        <div>
+          <strong>AgroCampo</strong>
+          <small>Gestão Rural Digital</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Boas-Vindas</a>
+        <a href="explicacoes.html">Mais Explicações</a>
+        <a href="como-funciona.html">Como Funciona</a>
+        <a href="sistema.html" class="nav-cta">Acessar Sistema</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="welcome-hero">
     <div class="welcome-card">
-      <span class="welcome-badge">Gestão Agrícola Digital</span>
+      <span class="badge-pill">Tecnologia no Campo</span>
       <h1>Bem-vindo ao <span>AgroCampo</span></h1>
-      <p class="welcome-desc">
-        Ferramenta prática para produtores e trabalhadores rurais registrarem
-        observações das plantas e acompanharem os procedimentos de segurança na
-        aplicação de defensivos agrícolas.
+      <p class="welcome-text">
+        Uma plataforma simples, gratuita e prática para ajudar produtores e trabalhadores
+        rurais no acompanhamento diário das plantações e no controle seguro da aplicação
+        de defensivos agrícolas.
       </p>
 
-      <div class="welcome-features">
-        <div class="feature-item">
-          <strong>Observação das Plantas</strong>
-          <span>Acompanhe saúde, desenvolvimento, umidade e sinais de pragas por talhão.</span>
+      <div class="welcome-actions">
+        <a href="sistema.html" class="btn btn-primary btn-lg">Abrir Caderno de Campo</a>
+        <a href="como-funciona.html" class="btn btn-secondary btn-lg">Ver Como Funciona</a>
+      </div>
+
+      <div class="welcome-highlights">
+        <div class="highlight-box">
+          <h3>Observação de Plantas</h3>
+          <p>Registre o desenvolvimento da lavoura, umidade do solo e sinais iniciais de pragas.</p>
         </div>
-        <div class="feature-item">
-          <strong>Procedimento Seguro</strong>
-          <span>Checklist obrigatório de EPIs, clima e cálculo automático de carência.</span>
+        <div class="highlight-box">
+          <h3>Segurança na Aplicação</h3>
+          <p>Checklist obrigatório de EPIs, condições climáticas e controle de período de carência.</p>
         </div>
-        <div class="feature-item">
-          <strong>Caderno de Campo</strong>
-          <span>Histórico organizado e salvo automaticamente no seu navegador.</span>
+        <div class="highlight-box">
+          <h3>Acesso Rápido</h3>
+          <p>Funciona direto no navegador do celular ou computador, salvando seus registros localmente.</p>
         </div>
       </div>
 
-      <button id="btn-entrar" class="btn btn-primary btn-lg">
-        Acessar Caderno de Campo
-      </button>
+      <div class="welcome-footer-link">
+        Quer entender a importância do monitoramento e das normas de segurança?
+        <a href="explicacoes.html">Leia mais explicações aqui →</a>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <!-- APLICAÇÃO PRINCIPAL -->
-  <div id="app-container" class="app-container hidden">
-    <header class="topbar">
-      <div class="topbar-content">
-        <div class="brand">
-          <div class="brand-icon">🌱</div>
-          <div>
-            <h2>AgroCampo</h2>
-            <small>Caderno de Campo &amp; Monitoramento Rural</small>
-          </div>
-        </div>
-
-        <button id="btn-voltar-inicio" class="btn btn-outline">
-          Tela de Boas-Vindas
-        </button>
-      </div>
-    </header>
-
-    <main class="main-content">
-      <!-- INDICADORES RESUMIDOS -->
-      <section class="stats-grid" aria-label="Resumo da propriedade">
-        <div class="stat-card">
-          <span class="stat-label">Observações Registradas</span>
-          <strong id="stat-obs" class="stat-value">0</strong>
-        </div>
-        <div class="stat-card stat-warning">
-          <span class="stat-label">Plantas em Atenção / Alerta</span>
-          <strong id="stat-alertas" class="stat-value">0</strong>
-        </div>
-        <div class="stat-card stat-info">
-          <span class="stat-label">Aplicações Registradas</span>
-          <strong id="stat-aplicacoes" class="stat-value">0</strong>
-        </div>
-      </section>
-
-      <!-- NAVEGAÇÃO ENTRE MÓDULOS -->
-      <nav class="tabs" aria-label="Módulos do sistema">
-        <button class="tab-btn active" data-tab="observacoes">
-          Observação das Plantas
-        </button>
-        <button class="tab-btn" data-tab="aplicacoes">
-          Procedimento de Aplicação (Defensivos)
-        </button>
-      </nav>
-
-      <!-- MÓDULO 1: OBSERVAÇÃO DAS PLANTAS -->
-      <section id="tab-observacoes" class="tab-panel active">
-        <div class="grid-layout">
-          <div class="card">
-            <h3>Nova Observação de Campo</h3>
-            <p class="card-subtitle">Registre o estado atual das plantas e condições do solo.</p>
-
-            <form id="form-observacao">
-              <div class="form-group">
-                <label for="obs-talhao">Talhão / Área *</label>
-                <input type="text" id="obs-talhao" placeholder="Ex: Talhão Norte - Área 02" required />
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="obs-cultura">Cultura / Planta *</label>
-                  <input type="text" id="obs-cultura" placeholder="Ex: Milho, Soja, Café" required />
-                </div>
-
-                <div class="form-group">
-                  <label for="obs-data">Data *</label>
-                  <input type="date" id="obs-data" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="obs-status">Estado Geral da Planta *</label>
-                <select id="obs-status" required>
-                  <option value="Saudável">Saudável (Desenvolvimento normal)</option>
-                  <option value="Atenção">Atenção (Sinais de pragas ou manchas)</option>
-                  <option value="Estresse Hídrico">Estresse Hídrico (Falta ou excesso de água)</option>
-                  <option value="Crítico">Crítico (Intervenção urgente)</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="obs-notas">Detalhes da Observação *</label>
-                <textarea id="obs-notas" rows="4" placeholder="Descreva aparência das folhas, altura, presença de insetos ou umidade do solo..." required></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block">
-                Salvar Observação
-              </button>
-            </form>
-          </div>
-
-          <div class="card">
-            <div class="list-header">
-              <div>
-                <h3>Histórico de Observações</h3>
-                <p class="card-subtitle">Acompanhe as inspeções realizadas na lavoura.</p>
-              </div>
-
-              <div class="filters">
-                <input type="text" id="busca-obs" placeholder="Buscar talhão ou cultura..." />
-                <select id="filtro-status">
-                  <option value="Todos">Todos os status</option>
-                  <option value="Saudável">Saudável</option>
-                  <option value="Atenção">Atenção</option>
-                  <option value="Estresse Hídrico">Estresse Hídrico</option>
-                  <option value="Crítico">Crítico</option>
-                </select>
-              </div>
-            </div>
-
-            <div id="lista-observacoes" class="records-list"></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- MÓDULO 2: PROCEDIMENTO DE APLICAÇÃO / DEFENSIVOS -->
-      <section id="tab-aplicacoes" class="tab-panel">
-        <div class="safety-banner">
-          <strong>Aviso de Segurança Rural:</strong> Utilize sempre Equipamentos de Proteção Individual (EPIs),
-          siga rigorosamente o receituário agronômico e respeite o período de carência antes da colheita.
-        </div>
-
-        <div class="grid-layout">
-          <div class="card">
-            <h3>Registrar Procedimento de Aplicação</h3>
-            <p class="card-subtitle">Confirme o checklist de segurança antes de salvar o registro.</p>
-
-            <div class="checklist-box">
-              <h4>Checklist Obrigatório de Segurança</h4>
-              <label class="check-item">
-                <input type="checkbox" id="chk-receituario" />
-                <span>Receituário agronômico e bula conferidos.</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" id="chk-epi" />
-                <span>EPIs completos em uso (luvas, máscara, óculos e vestimenta).</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" id="chk-clima" />
-                <span>Clima adequado (vento fraco e sem previsão de chuva imediata).</span>
-              </label>
-              <label class="check-item">
-                <input type="checkbox" id="chk-equipamento" />
-                <span>Pulverizador revisado, calibrado e sem vazamentos.</span>
-              </label>
-            </div>
-
-            <div id="app-alerta-epi" class="alert-error hidden">
-              Marque todos os itens do checklist de segurança antes de registrar o procedimento.
-            </div>
-
-            <form id="form-aplicacao">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="app-talhao">Talhão / Área *</label>
-                  <input type="text" id="app-talhao" placeholder="Ex: Talhão Sul" required />
-                </div>
-
-                <div class="form-group">
-                  <label for="app-cultura">Cultura *</label>
-                  <input type="text" id="app-cultura" placeholder="Ex: Tomate, Soja" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="app-tipo">Finalidade do Procedimento *</label>
-                <select id="app-tipo" required>
-                  <option value="Controle de Pragas (Inseticida)">Controle de Pragas (Inseticida)</option>
-                  <option value="Controle de Doenças (Fungicida)">Controle de Doenças (Fungicida)</option>
-                  <option value="Controle de Plantas Daninhas (Herbicida)">Controle de Plantas Daninhas (Herbicida)</option>
-                  <option value="Controle Biológico / Manejo Integrado">Controle Biológico / Manejo Integrado</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="app-produto">Produto / Defensivo Aplicado *</label>
-                <input type="text" id="app-produto" placeholder="Nome comercial ou princípio ativo" required />
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="app-data">Data da Aplicação *</label>
-                  <input type="date" id="app-data" required />
-                </div>
-
-                <div class="form-group">
-                  <label for="app-carencia">Período de Carência (dias) *</label>
-                  <input type="number" id="app-carencia" min="0" max="365" value="14" required />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="app-notas">Observações Operacionais</label>
-                <textarea id="app-notas" rows="3" placeholder="Horário da aplicação, condições do vento, alvo biológico..."></textarea>
-              </div>
-
-              <button type="submit" class="btn btn-primary btn-block">
-                Registrar Procedimento
-              </button>
-            </form>
-          </div>
-
-          <div class="card">
-            <div class="list-header">
-              <div>
-                <h3>Histórico de Aplicações</h3>
-                <p class="card-subtitle">Controle de procedimentos e datas de liberação para colheita.</p>
-              </div>
-            </div>
-
-            <div id="lista-aplicacoes" class="records-list"></div>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>
+  <footer class="footer">
+    <p>AgroCampo — Apoio ao Trabalho Rural e Boas Práticas Agrícolas</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
