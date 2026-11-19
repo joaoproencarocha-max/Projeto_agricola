@@ -4,104 +4,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroCampo - Mais Explicações</title>
+    <title>Sistema | AgroCampo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="logo">
-        🌱 AgroCampo
-        <small>Gestão Rural Digital</small>
-    </div>
-
-    <nav>
-        <a href="index.html">Boas-Vindas</a>
-        <a href="explicacoes.html" class="ativo">Mais Explicações</a>
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        <span>🌱</span>
+        <div><strong>AgroCampo</strong><small>Gestão Rural Digital</small></div>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="explicacoes.html">Explicações</a>
         <a href="como-funciona.html">Como Funciona</a>
-        <a href="login.html" class="botao">Acessar Sistema</a>
     </nav>
 </header>
 
 <main class="container">
 
-    <div class="introducao">
-        <span class="etiqueta">CONHECIMENTO AGRÍCOLA</span>
-        <h1>Por que monitorar a lavoura e seguir procedimentos seguros?</h1>
-        <p>
-            Entenda os pilares técnicos e de saúde que tornam o trabalho
-            rural mais produtivo, econômico e seguro.
-        </p>
-    </div>
+    <section class="titulo-secao">
+        <span class="etiqueta">PAINEL DE CONTROLE</span>
+        <h1>Sistema AgroCampo</h1>
+        <p>Organize e acompanhe os registros da sua propriedade rural.</p>
+    </section>
 
-    <section class="cards">
+    <section class="painel">
 
-        <a href="monitoramento.html" class="card">
-            <span class="categoria">1. MONITORAMENTO PREVENTIVO</span>
-            <h2>A importância da observação das plantas</h2>
-            <p>
-                Caminhar pelos talhões e anotar o estado visual das
-                plantas permite identificar problemas antes que eles
-                se espalhem por toda a propriedade.
-            </p>
-            <ul>
-                <li><strong>Detecção precoce de pragas:</strong>
-                Identificar lagartas, percevejos ou fungos no início.</li>
+        <div class="painel-topo">
+            <div>
+                <h2>Monitoramento da lavoura</h2>
+                <p>Cadastre uma nova observação.</p>
+            </div>
+            <span class="icone-painel">🌱</span>
+        </div>
 
-                <li><strong>Controle de estresse hídrico:</strong>
-                Observar folhas murchas ou amareladas.</li>
+        <form id="form-monitoramento" class="formulario">
 
-                <li><strong>Histórico por área:</strong>
-                Planejar as próximas safras.</li>
-            </ul>
-            <span class="ler">Saiba mais →</span>
-        </a>
+            <label for="talhao">Nome do talhão</label>
+            <input type="text" id="talhao" placeholder="Ex: Talhão 01" required>
 
-        <a href="protecao.html" class="card">
-            <span class="categoria">2. PROTEÇÃO AO TRABALHADOR</span>
-            <h2>Procedimento seguro com defensivos</h2>
-            <p>
-                O manuseio de produtos fitossanitários exige rigor
-                técnico para evitar intoxicações e contaminação ambiental.
-            </p>
-            <ul>
-                <li><strong>Receituário Agronômico:</strong>
-                Utilize produtos recomendados por profissional habilitado.</li>
+            <label for="cultura">Cultura agrícola</label>
+            <input type="text" id="cultura" placeholder="Ex: Soja, milho..." required>
 
-                <li><strong>Uso completo de EPIs:</strong>
-                Luvas, máscara, óculos e vestimenta de proteção.</li>
+            <label for="situacao">Situação observada</label>
+            <select id="situacao" required>
+                <option value="">Selecione uma situação</option>
+                <option value="Plantas saudáveis">Plantas saudáveis</option>
+                <option value="Presença de pragas">Presença de pragas</option>
+                <option value="Sinais de doenças">Sinais de doenças</option>
+                <option value="Estresse hídrico">Estresse hídrico</option>
+                <option value="Outra ocorrência">Outra ocorrência</option>
+            </select>
 
-                <li><strong>Condições do clima:</strong>
-                Evite aplicações com vento forte ou chuva.</li>
-            </ul>
-            <span class="ler">Saiba mais →</span>
-        </a>
+            <label for="observacao">Descrição da observação</label>
+            <textarea id="observacao" rows="4" placeholder="Descreva o que foi observado..."></textarea>
 
-        <a href="carencia.html" class="card">
-            <span class="categoria">3. SEGURANÇA ALIMENTAR</span>
-            <h2>O que é o Período de Carência?</h2>
-            <p>
-                É o intervalo mínimo de dias que deve ser respeitado
-                entre a última aplicação do defensivo e a colheita.
-            </p>
-            <ul>
-                <li><strong>Degradação do produto:</strong>
-                Respeitar os limites seguros de resíduos.</li>
+            <button type="submit" class="botao-principal">Salvar registro</button>
+        </form>
 
-                <li><strong>Prevenção de erros:</strong>
-                Registrar as datas de aplicação e liberação.</li>
-            </ul>
-            <span class="ler">Saiba mais →</span>
-        </a>
+        <div class="registros">
+            <h2>Registros cadastrados</h2>
+            <div id="lista-registros">
+                <p class="texto-vazio">Nenhum registro cadastrado.</p>
+            </div>
+        </div>
 
     </section>
 
+    <a href="index.html" class="botao-voltar">← Voltar ao início</a>
+
 </main>
 
-<footer>
-    © 2026 AgroCampo - Gestão Rural Digital
-</footer>
-
+<footer><strong>🌱 AgroCampo</strong><p>Gestão Rural Digital © 2026</p></footer>
 <script src="script.js"></script>
 </body>
 </html>

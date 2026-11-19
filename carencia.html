@@ -4,75 +4,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Período de Carência - AgroCampo</title>
+    <title>Período de Carência | AgroCampo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="logo">🌱 AgroCampo
-        <small>Gestão Rural Digital</small>
-    </div>
-    <nav>
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        <span>🌱</span>
+        <div><strong>AgroCampo</strong><small>Gestão Rural Digital</small></div>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="menu">
         <a href="index.html">Boas-Vindas</a>
         <a href="explicacoes.html" class="ativo">Mais Explicações</a>
         <a href="como-funciona.html">Como Funciona</a>
+        <a href="sistema.html" class="botao-menu">Acessar Sistema</a>
     </nav>
 </header>
 
 <main class="container">
 
-    <div class="introducao">
+    <section class="titulo-secao">
         <span class="etiqueta">SEGURANÇA ALIMENTAR</span>
         <h1>O que é o Período de Carência?</h1>
-        <p>Entenda por que respeitar o intervalo entre a aplicação de defensivos e a colheita.</p>
-    </div>
+        <p>Entenda o intervalo entre a última aplicação de defensivo e a colheita.</p>
+    </section>
 
-    <section class="pagina-detalhe">
+    <article class="conteudo-pagina">
 
-        <h2>1. O que significa período de carência?</h2>
+        <div class="destaque-conteudo">
+            <span>🌾</span>
+            <div>
+                <h2>O que significa período de carência?</h2>
+                <p>
+                    É o intervalo mínimo de tempo que precisa
+                    ser respeitado entre a última aplicação
+                    de determinado produto e a colheita.
+                </p>
+            </div>
+        </div>
+
+        <h2>1. Por que respeitar esse período?</h2>
         <p>
-            O período de carência é o intervalo mínimo de tempo
-            que deve ser respeitado entre a última aplicação de
-            determinado defensivo agrícola e a colheita.
+            O período de carência contribui para que os resíduos
+            do produto diminuam até os limites permitidos
+            para aquela cultura e aplicação.
         </p>
 
-        <h2>2. Por que ele é importante?</h2>
+        <h2>2. Degradação do produto</h2>
         <p>
-            Esse intervalo permite que os resíduos do produto
-            diminuam até os limites estabelecidos para aquela
-            cultura e aplicação, contribuindo para a segurança alimentar.
+            Após a aplicação, os resíduos podem diminuir
+            ao longo do tempo. Esse processo depende de
+            fatores como o produto utilizado, a cultura
+            e as condições ambientais.
         </p>
 
         <h2>3. Como evitar erros?</h2>
         <ul>
-            <li>Registrar a data de cada aplicação.</li>
-            <li>Identificar qual produto foi utilizado.</li>
-            <li>Consultar o intervalo indicado no rótulo e na bula.</li>
-            <li>Calcular a data mínima permitida para a colheita.</li>
-            <li>Manter os registros organizados.</li>
+            <li>Registre a data da aplicação.</li>
+            <li>Anote o nome do produto utilizado.</li>
+            <li>Confira o período indicado no rótulo e na bula.</li>
+            <li>Organize os registros de cada talhão.</li>
+            <li>Não antecipe a colheita.</li>
         </ul>
 
         <h2>4. Exemplo prático</h2>
         <p>
-            Se a bula de um produto estabelecer um período de
-            carência de 14 dias, a colheita deverá respeitar
-            esse intervalo após a última aplicação.
+            Imagine que a bula de um produto estabeleça
+            um período de carência de 14 dias para determinada
+            cultura e uso.
         </p>
-
-        <h2>5. Segurança alimentar</h2>
         <p>
-            Respeitar o período de carência ajuda a garantir
-            que os alimentos cheguem ao consumidor dentro
-            dos padrões de segurança estabelecidos.
+            Nesse caso, o produtor deve respeitar os 14 dias
+            completos após a última aplicação, antes de realizar
+            a colheita.
         </p>
 
-        <a href="explicacoes.html" class="voltar">← Voltar para explicações</a>
+        <div class="aviso">
+            <strong>⚠️ Importante</strong>
+            <p>
+                O período de carência varia conforme o produto,
+                a cultura e o uso autorizado. Nunca utilize
+                um prazo genérico: confira sempre a bula vigente.
+            </p>
+        </div>
 
-    </section>
+        <a href="explicacoes.html" class="botao-voltar">← Voltar para explicações</a>
+
+    </article>
 </main>
 
-<footer>© 2026 AgroCampo - Gestão Rural Digital</footer>
+<footer><strong>🌱 AgroCampo</strong><p>Gestão Rural Digital © 2026</p></footer>
 <script src="script.js"></script>
 </body>
 </html>

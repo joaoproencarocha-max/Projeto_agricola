@@ -1,73 +1,101 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroCampo — Bem-vindo</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AgroCampo - Gestão Rural Digital">
+    <title>AgroCampo | Início</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="navbar">
-    <div class="nav-container">
-      <a href="index.html" class="brand">
-        <span class="brand-icon">🌱</span>
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        <span>🌱</span>
         <div>
-          <strong>AgroCampo</strong>
-          <small>Gestão Rural Digital</small>
+            <strong>AgroCampo</strong>
+            <small>Gestão Rural Digital</small>
         </div>
-      </a>
+    </a>
 
-      <nav class="nav-links">
-        <a href="index.html" class="active">Boas-Vindas</a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+
+    <nav class="menu">
+        <a href="index.html" class="ativo">Boas-Vindas</a>
         <a href="explicacoes.html">Mais Explicações</a>
         <a href="como-funciona.html">Como Funciona</a>
-        <a href="sistema.html" class="nav-cta">Acessar Sistema</a>
-      </nav>
-    </div>
-  </header>
+        <a href="sistema.html" class="botao-menu">Acessar Sistema</a>
+    </nav>
+</header>
 
-  <main class="welcome-hero">
-    <div class="welcome-card">
-      <span class="badge-pill">Tecnologia no Campo</span>
-      <h1>Bem-vindo ao <span>AgroCampo</span></h1>
-      <p class="welcome-text">
-        Uma plataforma simples, gratuita e prática para ajudar produtores e trabalhadores
-        rurais no acompanhamento diário das plantações e no controle seguro da aplicação
-        de defensivos agrícolas.
-      </p>
+<main>
+    <section class="hero">
+        <span class="etiqueta">🌿 TECNOLOGIA NO CAMPO</span>
 
-      <div class="welcome-actions">
-        <a href="sistema.html" class="btn btn-primary btn-lg">Abrir Caderno de Campo</a>
-        <a href="como-funciona.html" class="btn btn-secondary btn-lg">Ver Como Funciona</a>
-      </div>
+        <h1>Bem-vindo ao <span>AgroCampo</span></h1>
 
-      <div class="welcome-highlights">
-        <div class="highlight-box">
-          <h3>Observação de Plantas</h3>
-          <p>Registre o desenvolvimento da lavoura, umidade do solo e sinais iniciais de pragas.</p>
+        <p>
+            Uma plataforma criada para ajudar produtores rurais
+            a acompanhar suas lavouras, organizar informações
+            e melhorar a gestão da propriedade.
+        </p>
+
+        <div class="hero-botoes">
+            <a href="sistema.html" class="botao-principal">
+                Acessar Sistema →
+            </a>
+
+            <a href="explicacoes.html" class="botao-secundario">
+                Conhecer a plataforma
+            </a>
         </div>
-        <div class="highlight-box">
-          <h3>Segurança na Aplicação</h3>
-          <p>Checklist obrigatório de EPIs, condições climáticas e controle de período de carência.</p>
+    </section>
+
+    <section class="secao container">
+        <div class="titulo-secao">
+            <span class="etiqueta">AGROCAMPO</span>
+            <h2>Tecnologia e conhecimento para o campo</h2>
+            <p>Conheça os principais recursos da plataforma.</p>
         </div>
-        <div class="highlight-box">
-          <h3>Acesso Rápido</h3>
-          <p>Funciona direto no navegador do celular ou computador, salvando seus registros localmente.</p>
+
+        <div class="grade-tres">
+            <article class="cartao">
+                <div class="icone">🌱</div>
+                <h3>Monitoramento</h3>
+                <p>Acompanhe as condições das plantas e identifique problemas na lavoura.</p>
+            </article>
+
+            <article class="cartao">
+                <div class="icone">🛡️</div>
+                <h3>Segurança</h3>
+                <p>Conheça procedimentos importantes para proteger os trabalhadores rurais.</p>
+            </article>
+
+            <article class="cartao">
+                <div class="icone">🌾</div>
+                <h3>Produção</h3>
+                <p>Organize informações e conheça cuidados importantes antes da colheita.</p>
+            </article>
         </div>
-      </div>
+    </section>
 
-      <div class="welcome-footer-link">
-        Quer entender a importância do monitoramento e das normas de segurança?
-        <a href="explicacoes.html">Leia mais explicações aqui →</a>
-      </div>
-    </div>
-  </main>
+    <section class="faixa-verde">
+        <div>
+            <h2>Conhecimento que transforma o campo!</h2>
+            <p>Aprenda mais sobre monitoramento, segurança e produção agrícola.</p>
+        </div>
+        <a href="explicacoes.html" class="botao-principal">
+            Ver explicações →
+        </a>
+    </section>
+</main>
 
-  <footer class="footer">
-    <p>AgroCampo — Apoio ao Trabalho Rural e Boas Práticas Agrícolas</p>
-  </footer>
+<footer>
+    <strong>🌱 AgroCampo</strong>
+    <p>Gestão Rural Digital © 2026</p>
+</footer>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

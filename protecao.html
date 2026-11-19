@@ -4,77 +4,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proteção ao Trabalhador - AgroCampo</title>
+    <title>Proteção ao Trabalhador | AgroCampo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-    <div class="logo">🌱 AgroCampo
-        <small>Gestão Rural Digital</small>
-    </div>
-    <nav>
+<header class="cabecalho">
+    <a href="index.html" class="logo">
+        <span>🌱</span>
+        <div><strong>AgroCampo</strong><small>Gestão Rural Digital</small></div>
+    </a>
+    <button class="menu-toggle" aria-label="Abrir menu">☰</button>
+    <nav class="menu">
         <a href="index.html">Boas-Vindas</a>
         <a href="explicacoes.html" class="ativo">Mais Explicações</a>
         <a href="como-funciona.html">Como Funciona</a>
+        <a href="sistema.html" class="botao-menu">Acessar Sistema</a>
     </nav>
 </header>
 
 <main class="container">
 
-    <div class="introducao">
+    <section class="titulo-secao">
         <span class="etiqueta">PROTEÇÃO AO TRABALHADOR</span>
         <h1>Procedimentos seguros com defensivos agrícolas</h1>
-        <p>Conheça os cuidados necessários para proteger a saúde dos trabalhadores e o meio ambiente.</p>
-    </div>
+        <p>Saiba como reduzir riscos para os trabalhadores e evitar contaminações.</p>
+    </section>
 
-    <section class="pagina-detalhe">
+    <article class="conteudo-pagina">
 
-        <h2>1. O que são defensivos agrícolas?</h2>
+        <div class="destaque-conteudo">
+            <span>🛡️</span>
+            <div>
+                <h2>Por que a segurança é importante?</h2>
+                <p>
+                    O uso incorreto de produtos fitossanitários
+                    pode causar intoxicações, acidentes e impactos
+                    ao meio ambiente.
+                </p>
+            </div>
+        </div>
+
+        <h2>1. Receituário Agronômico</h2>
         <p>
-            São produtos utilizados para controlar pragas, doenças
-            e plantas daninhas que podem prejudicar o desenvolvimento
-            das culturas agrícolas.
+            A utilização de produtos deve seguir a recomendação
+            de profissional legalmente habilitado. É necessário
+            respeitar as indicações de uso para a cultura e o
+            problema identificado.
         </p>
 
-        <h2>2. Receituário Agronômico</h2>
+        <h2>2. Equipamentos de Proteção Individual (EPIs)</h2>
         <p>
-            A utilização de defensivos deve seguir a orientação
-            de profissional legalmente habilitado, respeitando
-            o receituário agronômico e as instruções do fabricante.
+            Os equipamentos de proteção devem ser adequados
+            ao produto e à atividade realizada, seguindo
+            as orientações do rótulo e da bula.
         </p>
-
-        <h2>3. Equipamentos de Proteção Individual (EPIs)</h2>
-        <p>O trabalhador deve utilizar os equipamentos indicados no rótulo e na bula do produto.</p>
-
         <ul>
-            <li>Luvas de proteção adequadas.</li>
+            <li>Luvas apropriadas para o produto.</li>
             <li>Proteção respiratória indicada.</li>
             <li>Óculos de proteção.</li>
-            <li>Vestimentas e botas apropriadas.</li>
+            <li>Vestimentas de proteção.</li>
+            <li>Botas adequadas.</li>
         </ul>
 
-        <h2>4. Condições climáticas</h2>
+        <h2>3. Condições climáticas</h2>
         <p>
-            Vento, chuva e temperaturas elevadas podem aumentar
-            os riscos durante a aplicação. É necessário respeitar
-            as condições e os limites indicados no rótulo e na bula.
+            A aplicação precisa respeitar os limites de
+            temperatura, umidade e vento definidos para o produto.
+            Chuva e vento podem comprometer a aplicação e aumentar
+            os riscos de exposição.
         </p>
 
-        <h2>5. Cuidados após a aplicação</h2>
+        <h2>4. Armazenamento correto</h2>
         <ul>
-            <li>Respeite os procedimentos de higiene.</li>
-            <li>Realize a limpeza dos equipamentos conforme as instruções.</li>
-            <li>Armazene os produtos em local adequado.</li>
-            <li>Faça a destinação correta das embalagens.</li>
+            <li>Mantenha os produtos em local apropriado e sinalizado.</li>
+            <li>Evite o acesso de crianças e animais.</li>
+            <li>Conserve os produtos nas embalagens originais.</li>
+            <li>Siga as orientações do fabricante.</li>
         </ul>
 
-        <a href="explicacoes.html" class="voltar">← Voltar para explicações</a>
+        <h2>5. Cuidados com as embalagens</h2>
+        <p>
+            As embalagens vazias devem receber a destinação
+            adequada, conforme as instruções legais e do
+            fabricante. Nunca reutilize embalagens de defensivos.
+        </p>
 
-    </section>
+        <div class="aviso">
+            <strong>⚠️ Atenção</strong>
+            <p>
+                As orientações desta página são educativas.
+                Sempre siga o rótulo, a bula, as normas vigentes
+                e as orientações de profissionais habilitados.
+            </p>
+        </div>
+
+        <a href="explicacoes.html" class="botao-voltar">← Voltar para explicações</a>
+
+    </article>
 </main>
 
-<footer>© 2026 AgroCampo - Gestão Rural Digital</footer>
+<footer><strong>🌱 AgroCampo</strong><p>Gestão Rural Digital © 2026</p></footer>
 <script src="script.js"></script>
 </body>
 </html>
